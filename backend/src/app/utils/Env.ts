@@ -13,16 +13,9 @@ export class Env {
     TYPEORM_ENTITIES_DIR: string;
     TYPEORM_JWT_SECRET: string;
     APP_PORT: string;
-
-    APP_UTIL_API_URL: string;
-    APP_URL: string;
     APP_API_SUFFIX: string;
-    APP_CDN_SUFFIX: string;
-    APP_FACEBOOK_REDIRECT_URI: string;
-    APP_GOOGLE_REDIRECT_URI: string;
-    GOOGLE_APPLICATION_CREDENTIALS: string;
-    GOOGLE_AI_CREDENTIALS: string;
-    AI_AGENT: string;
+
+    APP_URL: string;
     CONFIG_ORIGIN: string;
 
 };
