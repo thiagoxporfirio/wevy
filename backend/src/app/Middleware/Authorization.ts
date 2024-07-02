@@ -1,6 +1,8 @@
 import { type NextFunction, type Request, type Response } from "express";
 import { verificaToken } from "../../config/JwtConfig";
 import { loggerInfo, loggerInfoItem } from "../utils/LoggerUtil";
+import { AppDataSource } from "../../database/data-source";
+import { User } from "../entity/User";
 
 type ExtendedRequest = {
 	user?: any;
@@ -18,16 +20,25 @@ export default async function tokenMiddleware(
 			return res.sendStatus(401);
 		}
 
-		const token = authorization.replace("Barer", "").trim();
+		const token = authorization.replace("Bearer", "").trim();
 
-		const data: any = verificaToken(token);
-		if (!verificaToken(token)) {
+		const decoded: any = verificaToken(token);
+		if (!decoded) {
 			return res.sendStatus(401);
 		}
 
+		const userRepository = AppDataSource.getRepository(User);
+		const user = await userRepository.findOne({ where: { id: decoded.id } });
+
+		if (!user) {
+			return res.sendStatus(401);
+		}
+
+		req.user = user;
 		loggerInfoItem("Token Valido: ", token);
 		next();
-	} catch {
+	} catch (error) {
+		console.error(error);
 		return res.sendStatus(401);
 	}
 }

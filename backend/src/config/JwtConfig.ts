@@ -1,8 +1,6 @@
 import { sign, verify } from "jsonwebtoken";
 import { env, Env } from "../app/utils/Env";
 
-
-
 const tokenVerifyCode = env.TYPEORM_JWT_SECRET;
 
 export function verificaToken(token: string) {
@@ -10,7 +8,7 @@ export function verificaToken(token: string) {
 }
 
 export function cadastraToken(object: any) {
-	return sign({ cpf_cnpj: object.cpf_cnpj }, tokenVerifyCode, {
+	return sign({ id: object.id, email: object.email }, tokenVerifyCode, {
 		expiresIn: "1d"
 	});
 }
