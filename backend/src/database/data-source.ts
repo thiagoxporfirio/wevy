@@ -1,9 +1,10 @@
 import { DataSource } from "typeorm";
 import { env } from "../app/utils/Env";
 import { User } from "../app/entity/User";
+import { Task } from "../app/entity/Task";
 
 
-const entities = [User];
+const entities = [User, Task];
 
 const config: any = env.isDevelopment
   ? {
