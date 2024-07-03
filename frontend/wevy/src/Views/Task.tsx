@@ -22,6 +22,8 @@ import EditIcon from "@mui/icons-material/Edit";
 import useStore from "../store/store";
 import axios from "axios";
 
+import { URL_API } from "./Login";
+
 const TaskPage: React.FC = () => {
 	const {
 		tasks,
@@ -49,7 +51,7 @@ const TaskPage: React.FC = () => {
 			if (!token) return;
 
 			try {
-				const response = await axios.get("http://localhost:443/get-tasks", {
+				const response = await axios.get(`${URL_API}/get-tasks`, {
 					headers: {
 						Authorization: `Bearer ${token}`
 					}
@@ -74,7 +76,7 @@ const TaskPage: React.FC = () => {
 
 		try {
 			const response = await axios.post(
-				"http://localhost:443/create-task",
+				`${URL_API}/create-task`,
 				newTask,
 				{
 					headers: {
@@ -101,7 +103,7 @@ const TaskPage: React.FC = () => {
 
 		try {
 			const response = await axios.delete(
-				`http://localhost:443/delete-task/${id}`,
+				`${URL_API}/delete-task/${id}`,
 				{
 					headers: {
 						Authorization: `Bearer ${token}`
@@ -128,7 +130,7 @@ const TaskPage: React.FC = () => {
 			if (!task) return;
 
 			const response = await axios.put(
-				`http://localhost:443/update-task/${id}`,
+				`${URL_API}/update-task/${id}`,
 				{ ...task, completed: !task.completed },
 				{
 					headers: {
@@ -159,7 +161,7 @@ const TaskPage: React.FC = () => {
 
 		try {
 			const response = await axios.put(
-				`http://localhost:443/update-task/${editTask.id}`,
+				`${URL_API}/update-task/${editTask.id}`,
 				{ title: editTask.title, description: editTask.description },
 				{
 					headers: {
