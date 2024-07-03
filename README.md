@@ -12,6 +12,14 @@ Esta é uma aplicação de lista de tarefas (To-Do List) construída com React, 
 - Interface de usuário estilizada com Material-UI.
 - Gerenciamento de estado com Zustand.
 
+  ## Estrutura do Banco de Dados
+
+![Database Schema](./assets/mesa.png)
+
+![Database Tasks](./assets/tasks.png)
+
+![Database Users](./assets/users.png)
+
 ## Demonstração
 
 Veja a demonstração da aplicação no seguinte vídeo:
