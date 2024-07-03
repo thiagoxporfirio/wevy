@@ -12,6 +12,13 @@ Esta é uma aplicação de lista de tarefas (To-Do List) construída com React, 
 - Interface de usuário estilizada com Material-UI.
 - Gerenciamento de estado com Zustand.
 
+## Demonstração
+
+Veja a demonstração da aplicação no seguinte vídeo:
+
+[![To-Do List Application Demo](https://img.youtube.com/vi/jVo5BsHSUgE/0.jpg)](https://youtu.be/jVo5BsHSUgE)
+
+
 ## Requisitos
 
 - Node.js
