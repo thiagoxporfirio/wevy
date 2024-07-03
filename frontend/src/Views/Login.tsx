@@ -19,7 +19,7 @@ const LoginPage: React.FC = () => {
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
 	const navigate = useNavigate();
-	const setToken = useStore(state => state.setToken);
+	const setToken = useStore((state: any) => state.setToken);
 
 	const handleLogin = async () => {
 		try {
