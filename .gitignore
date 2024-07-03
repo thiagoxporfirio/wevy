@@ -1,4 +1,7 @@
 /backend/node_modules/*
+/frontend/wevy/node_modules/*
+/frontend/wevy/public/*
+/node_modules/*
 
 # production
 /app/build

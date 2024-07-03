@@ -14,7 +14,7 @@ export async function createUser(request: Request, response: Response) {
 		}
 
 		// Validação da senha
-		if (password.length < 8) {
+		if (password.length < 4) {
 			return response
 				.status(400)
 				.json("A senha deve ter pelo menos 8 caracteres");

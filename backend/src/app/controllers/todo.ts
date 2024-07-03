@@ -7,7 +7,6 @@ type ExtendedRequest = {
 	user?: User;
 } & Request;
 
-
 export async function createTask(request: ExtendedRequest, response: Response) {
 	try {
 		const { title, description } = request.body;
@@ -38,7 +37,6 @@ export async function createTask(request: ExtendedRequest, response: Response) {
 	}
 }
 
-
 export async function getTasks(request: ExtendedRequest, response: Response) {
 	try {
 		const userId = request.user!.id;
@@ -55,7 +53,6 @@ export async function getTasks(request: ExtendedRequest, response: Response) {
 		return response.status(500).send("Internal Server Error: " + error.message);
 	}
 }
-
 
 export async function updateTask(request: ExtendedRequest, response: Response) {
 	try {
@@ -88,13 +85,11 @@ export async function updateTask(request: ExtendedRequest, response: Response) {
 	}
 }
 
-
 export async function deleteTask(request: ExtendedRequest, response: Response) {
 	try {
 		const { id } = request.params;
 		const userId = request.user!.id;
 
-	
 		const taskId = parseInt(id, 10);
 
 		const taskRepository = AppDataSource.getRepository(Task);
