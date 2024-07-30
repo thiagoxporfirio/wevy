@@ -8,7 +8,7 @@ import { createTask, deleteTask, getTasks, updateTask } from "./app/controllers/
 
 export const router = Router();
 
-router.get("/", (request, response) => response.json({ message: "." }));
+router.get("/", (request, response) => response.json({ message: "Bem vindo a api para Omie! :D" }));
 
 // ======================
 // Authentication and User Management

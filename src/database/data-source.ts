@@ -26,7 +26,7 @@ const config: any = env.isDevelopment
       password: env.TYPEORM_PASSWORD,
       database: env.TYPEORM_DATABASE,
       extra: {
-        // socketPath: "/cloudsql/causa-ganha-app:us-central1:causa-ganha-app-db",
+        // socketPath: "",
       },
       entities,
       synchronize: false, // Lembre-se de que isso não deve ser usado em produção
